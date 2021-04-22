@@ -1,0 +1,8 @@
+<arrow.model>
+  <materialNames></materialNames>
+  <visibilityBox>
+    <min>	-1.452332 -2.351336 -1.698949	</min>
+    <max>	-0.547668 2.351336 1.698949	</max>
+  </visibilityBox>
+  <nodefullVisual>	../mods/shared_resources/xvm/res/markers/Arrow/arrow	</nodefullVisual>
+</arrow.model>
