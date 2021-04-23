@@ -31,7 +31,7 @@ class ArtyBall(object):
             print('[predictAim] could not find model: %s' % path)
             path = os.path.join(os.getcwd(),'res_mods','mods','shared_resources','xvm','res','objects','cylinder_red_big.model')
             self.modelDot = StaticObjectMarker3D({ 'path': path }, (0, 0, 0))
-        self.modelDot._StaticObjectMarker3D__model.scale = (0.3, 0.5, 0.3)
+        self.modelDot._StaticObjectMarker3D__model.scale = (0.3, 5.0, 0.3)
         self.modelDot._StaticObjectMarker3D__model.visible = False
 
     def clear(self):
