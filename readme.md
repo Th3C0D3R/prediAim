@@ -1,6 +1,8 @@
 # Predict Aim for World of Tanks
 ## Created by TH3C0D3R
 
+## Please leave star if you use it 
+
 ### How to use:
 To use this mod you have to do some setup:
 - Python 2.7 must be installed
