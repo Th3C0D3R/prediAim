@@ -1,4 +1,6 @@
-print('Loading mod: predictAim')
+print('Predict-Aim Mod by TH3C0D3R')
+print("predicts the position where the enemy could be.")
+print("factors: Speed, Shell-Travel-Time. Enemy Position")
 import BigWorld
 import os
 import math
@@ -41,13 +43,6 @@ class ArtyBall(object):
             self.modelDot.clear()
         self.modelDot = None
 
-    """
-    traveltime = distance_to_car / bullet_nozzle_velocity
-    current_speed = car.speed
-    predicted_speed = car.speed + traveltime * car.acceleration
-    average_speed = ( current_speed + predicted_speed ) / 2
-    predicted_pos = car.pos + average_speed * traveltime
-    """
     def update(self):
         global printedVehicle
         self.vehicle = BigWorld.entity(self.vehicleID)
@@ -72,9 +67,10 @@ class ArtyBall(object):
                 distance = playerPosition.flatDistTo(self.vehicle.model.node("hull").position)
                 traveltime = distance / shotSpeed
                 enemyCurrentSpeed = self.vehicle.speedInfo.value
-                if self.lastSpeedValue is None:
+                if self.lastSpeedValue is None or self.lastSpeedValue is enemyCurrentSpeed:
                     self.lastSpeedValue = enemyCurrentSpeed
                 enemyCurrentSpeed = (enemyCurrentSpeed + self.lastSpeedValue) / 2
+                self.lastSpeedValue = enemyCurrentSpeed
                 centerFront = self.vehicle.model.node("hull").position
 
                 cMin , cMax , _ = self.vehicle.getBounds(TankPartIndexes.CHASSIS)
